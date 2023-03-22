@@ -1,0 +1,11 @@
+.shape {
+    background: #aaa;
+    height: 200px;
+    width: 200px;
+    border: 1px solid black;
+}
+@keyframes box {
+    from { left: 0; }
+    to { left: 300px; }
+    animation-duration: 500ms
+   }
