@@ -1,123 +1,78 @@
-// "use strict";
+//Array = [elem_1, elem_2]
 
-// const details = {
-//     name: 'Hello!',
-// }
+function arrayCreation(){
+    let arrayWithInitSize = new Array(4);
+    let arrayWithOneValue = new Array('5');
+    let arrayWithPreset = new Array(5,6);
+    let arrayWithInitVale = Array.of(4);
+    let arrayWithInitValues = Array.of(4,5,6);
+    let simpleWayArray = ['a','b','c'];
 
-// function getMessage() {
-//     return this.message;
+    console.log('Array creation:');
+    console.log('arrayWithInitSize:', arrayWithInitSize);
+    console.log('arrayWithOneValue:', arrayWithOneValue);
+    console.log('arrayWithPreset:', arrayWithPreset);
+    console.log('arrayWithInitVale:', arrayWithInitVale);
+    console.log('arrayWithInitValues:', arrayWithInitValues);
+    console.log('simpleWayArray:', simpleWayArray);
+}
 
-// "use strict";
+function arrayBypass(){
+    function logEachElement(array) {
+        for (let i = 0; i < array.length; i++) {
+            console.log(`[element with index ${i}] is ${array[i]}`);
+        }
+    }
 
-// const details = {
-//     message: 'Hello!',
-// }
+    function findSum(array) {
+        logEachElement(array);
 
-// function getMessage() {
-//     return this.message;
-// }
+        let sum = 0;
 
-// console.log(getMessage.call(details));
+        for (let i = 0; i < array.length; i++) {
+            sum += array[i];
+        }
 
-// console.log(getMessage.call(details));
+        console.log(`sum = ${sum}`);
+    }
 
-// let name = 'John';
+    function findMin(array) {
+        let min = array.length ? array[0] : 0;
 
-// function printName() {
-//     let name = 'Peter';
-//     console.log(name);
-// }
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] < min) {
+                min = array[i];
+            }
+        }
 
-// printName();
+        console.log(`min is ${min}`);
+    }
 
-// var name = 'John';
+    function findAvg(array) {
+        logEachElement(array);
 
-// var user = {
-//     name: "peter",
-//     printMessage() {
-//         console.log(`Hello, ${this.name}!`);
-//     }
-// };
+        let sum = 0;
+        for(let i = 0; i < array.length; i++) {
+            sum += array[i];
+        }
 
-// var printMessage = user.printMessage;
-// printMessage();
+        let avg = array.length ? sum/array.length : 0;
 
-// function printName() {
-//     let name = 'Peter';
-//     console.log(name);
-// }
+        console.log(`avg = ${avg}`);
+    }
 
-// printName();
+    console.log('Array bypass:')
 
-// const details = {
-//     name: 'John!',
-// }
-// function getMessage(message) {
-//     return `${message} ${this.name}`;
-// }
+    let array = [21, 22, 23, 24, 25, 26, 27];
+    // logEachElement(array);
 
-// console.log(getMessage.apply(details, ['Hello']));
+    array = [5, 1, 10, 23];
+    findSum(array);
+    findMin(array);
+    findAvg(array);
+}
 
-// for(let i = 0; i < 3; i++) {
-//     setTimeout(function() {
-//         console.log(i)
-//     }, 1000)
-// }
-// let a = 1;
-// let b = 2;
-// let f = function(a,b) { return a + b }
-// console.log(f);
+arrayBypass();
+        
 
-// "use strict";
-
-// function getThis() {
-//     return this;
-// }
-
-// console.log(getThis());
-
-// function foo(a, b) {
-//     return a * b;
-// }
-
-// const bar = foo.bind(null, 2);
-// bar(2);
-
-// printMessage();
-
-// function printMessage() {
-//     console.log('Hello!');
-// }
-
-// var a = 1, b = function a(x) { x && a(--x);};
-// console.log(a);
-
-// function foo() {
-//     return { bar: 1};
-// }
-
-// console.log(typeof foo().bar);
-
-// for(var i = 0; i < 10; i++) {
-//     //...
-// }
-// console.log(i);
-
-// function foo() { console.log(this);}
-// foo.call(null);
-
-// printMessage();
-
-// function printMessage() {
-//     console.log('Hello!');
-// }
-
-// let f = function g() { return 23;};
-// console.log(typeof
-
-
-
-
-
-
- 
+// arrayCreation();
